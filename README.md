@@ -5,7 +5,7 @@ PREREQUISITES
 
 Before installing, ensure your system has the following:
 
-    asusctl (The underlying driver for Asus hardware)
+asusctl (The underlying driver for Asus hardware)
 
 # QUICK INSTALL
 
@@ -13,9 +13,9 @@ If you have downloaded the pre-compiled asus-keyboard binary, run this command f
 Bash
 
 sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
-sudo chmod +x /usr/bin/asus-keyboard && \
-echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
-update-desktop-database ~/.local/share/applications/
+    sudo chmod +x /usr/bin/asus-keyboard && \
+    echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
+    update-desktop-database ~/.local/share/applications/
 
 # MANUAL BUILD
 
@@ -26,8 +26,8 @@ g++ -O3 main.cpp -o asus-keyboard $(pkg-config --cflags --libs gtk+-3.0) -lpthre
 
 # USAGE
 
-    Launcher: Search for Asus Keyboard in your application menu.
+Launcher: Search for Asus Keyboard in your application menu.
 
-    Terminal: Simply type asus-keyboard.
+Terminal: Simply type asus-keyboard.
 
-    Note: Launching the app while it is already running will cleanly restart the interface and background loop.
+Note: Launching the app while it is already running will cleanly restart the interface and background loop.
