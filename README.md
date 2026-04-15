@@ -10,9 +10,9 @@ asusctl (The underlying driver for Asus hardware)
 # QUICK INSTALL
 
 If you have downloaded the pre-compiled asus-keyboard binary, run this command from the folder where it was downloaded:
-Bash
 
-sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
+```bash
+    sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
     sudo chmod +x /usr/bin/asus-keyboard && \
     echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
     update-desktop-database ~/.local/share/applications/
