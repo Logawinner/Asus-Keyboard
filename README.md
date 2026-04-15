@@ -12,10 +12,11 @@ asusctl (The underlying driver for Asus hardware)
 If you have downloaded the pre-compiled asus-keyboard binary, run this command from the folder where it was downloaded:
 
 ```bash
-    sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
-    sudo chmod +x /usr/bin/asus-keyboard && \
-    echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
-    update-desktop-database ~/.local/share/applications/
+   tar -xvzf asus-keyboard-dist.tar.gz && \
+sudo mv ./usr/bin/asus-keyboard /usr/bin/asus-keyboard && \
+sudo chmod +x /usr/bin/asus-keyboard && \
+echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
+update-desktop-database ~/.local/share/applications/
 ```
 
 # MANUAL BUILD
@@ -23,7 +24,17 @@ If you have downloaded the pre-compiled asus-keyboard binary, run this command f
 If you prefer to build from source, ensure you have your compiler and GTK3 headers configured:
 
 ```bash
-g++ -O3 main.cpp -o asus-keyboard $(pkg-config --cflags --libs gtk+-3.0) -lpthread
+# 1. Extract the files
+tar -xvzf asus-keyboard-dist.tar.gz && \
+
+# 2. Compile fresh from the extracted source
+g++ -O3 Asus_Keyboard.cpp -o asus-keyboard $(pkg-config --cflags --libs gtk+-3.0) -lpthread && \
+
+# 3. Move and setup the system environment
+sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
+sudo chmod +x /usr/bin/asus-keyboard && \
+echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
+update-desktop-database ~/.local/share/applications/
 ```
 
 # USAGE
