@@ -21,9 +21,10 @@ If you have downloaded the pre-compiled asus-keyboard binary, run this command f
 # MANUAL BUILD
 
 If you prefer to build from source, ensure you have your compiler and GTK3 headers configured:
-Bash
 
+```bash
 g++ -O3 main.cpp -o asus-keyboard $(pkg-config --cflags --libs gtk+-3.0) -lpthread
+```
 
 # USAGE
 
