@@ -13,9 +13,9 @@ If you want to use the pre-compiled binary, run this command block:
 
 ```bash
 curl -sL https://github.com/Logawinner/Asus-Keyboard/raw/main/asus-keyboard-dist.tar.gz | tar -xvz && \
-sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
+sudo mv ./Asus_Keyboard /usr/bin/asus-keyboard && \
 sudo chmod +x /usr/bin/asus-keyboard && \
-echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
+echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=/home/$USER/.local/share/icons/com.logawinner.aura-keyboard/icon_v1.png\nTerminal=false\nCategories=Settings;HardwareSettings;\nStartupWMClass=com.logawinner.aura-keyboard" > ~/.local/share/applications/asus-keyboard.desktop && \
 update-desktop-database ~/.local/share/applications/
 ```
 
