@@ -9,11 +9,11 @@ asusctl (The underlying driver for Asus hardware)
 
 # QUICK INSTALL
 
-If you have downloaded the pre-compiled asus-keyboard binary, run this command from the folder where it was downloaded:
+If you want to use the pre-compiled binary, run this command block:
 
 ```bash
-tar -xvzf asus-keyboard-dist.tar.gz && \
-sudo mv ./usr/bin/asus-keyboard /usr/bin/asus-keyboard && \
+curl -sL https://github.com/Logawinner/Asus-Keyboard/raw/main/asus-keyboard-dist.tar.gz | tar -xvz && \
+sudo mv ./asus-keyboard /usr/bin/asus-keyboard && \
 sudo chmod +x /usr/bin/asus-keyboard && \
 echo -e "[Desktop Entry]\nType=Application\nName=Asus Keyboard\nComment=Stable Asus Aura Management\nExec=/usr/bin/asus-keyboard\nIcon=preferences-desktop-keyboard\nTerminal=false\nCategories=Settings;HardwareSettings;" > ~/.local/share/applications/asus-keyboard.desktop && \
 update-desktop-database ~/.local/share/applications/
@@ -24,8 +24,8 @@ update-desktop-database ~/.local/share/applications/
 If you prefer to build from source, ensure you have your compiler and GTK3 headers configured:
 
 ```bash
-# 1. Extract the files
-tar -xvzf asus-keyboard-dist.tar.gz && \
+# 1. Download and Extract the files
+curl -sL https://github.com/Logawinner/Asus-Keyboard/raw/main/asus-keyboard-dist.tar.gz | tar -xvz && \
 
 # 2. Compile fresh from the extracted source
 g++ -O3 Asus_Keyboard.cpp -o asus-keyboard $(pkg-config --cflags --libs gtk+-3.0) -lpthread && \
